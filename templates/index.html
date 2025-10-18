@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videa - AI Training Advisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>🎓 Videa Training Platform</h1>
+            <p>Demo: AI-Powered Personalized Learning</p>
+        </header>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-header-content">
+                    <h2>Videa</h2>
+                    <p>Your Personal Training Advisor</p>
+                </div>
+                <div class="status-indicator" id="statusIndicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Online</span>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <h3>Welcome! 👋</h3>
+                    <p>I'm Videa, and I'll help you find the perfect training videos for your professional development.</p>
+                    <p>Click "Start Chat" below to begin!</p>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Profile Completion</span>
+                        <span id="progressPercentage">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" id="progressBar"></div>
+                    </div>
+                </div>
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        class="chat-input" 
+                        id="messageInput" 
+                        placeholder="Type your message..."
+                        autocomplete="off"
+                        disabled
+                    >
+                    <button class="send-button" id="sendButton" disabled>
+                        <span class="button-text">Send</span>
+                        <span class="button-icon">→</span>
+                    </button>
+                </div>
+                <div class="start-chat-wrapper" id="startChatWrapper">
+                    <button class="start-chat-button" id="startChatButton">
+                        Start Chat
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            <p>Demo Application • GitHub Codespaces • Powered by Claude AI</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
