@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&family=Overpass:wght@400;500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,12 +7,15 @@
 }
 
 :root {
-    --primary-color: #667eea;
-    --primary-dark: #5568d3;
-    --secondary-color: #764ba2;
+    --primary-color: #A2146A;
+    --primary-dark: #8a1159;
+    --secondary-color: #F9B03B;
+    --accent-mauve: #ECD9E4;
+    --accent-light-gold: #FCD79C;
+    --accent-cream: #FFF6EB;
     --success-color: #48bb78;
     --danger-color: #f56565;
-    --text-dark: #2d3748;
+    --text-dark: #000000;
     --text-light: #718096;
     --bg-light: #f7fafc;
     --bg-white: #ffffff;
@@ -21,8 +26,9 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Overpass', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 18px;
+    background: linear-gradient(135deg, #A2146A 0%, #ECD9E4 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -50,6 +56,7 @@ body {
 }
 
 .app-header h1 {
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 32px;
     margin-bottom: 8px;
     font-weight: 700;
@@ -71,7 +78,7 @@ body {
 }
 
 .chat-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #A2146A 0%, #8a1159 100%);
     color: white;
     padding: 24px;
     display: flex;
@@ -80,8 +87,10 @@ body {
 }
 
 .chat-header-content h2 {
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 24px;
     margin-bottom: 4px;
+    font-weight: 600;
 }
 
 .chat-header-content p {
@@ -156,13 +165,15 @@ body {
 }
 
 .welcome-message h3 {
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 24px;
     margin-bottom: 12px;
+    font-weight: 600;
     color: var(--primary-color);
 }
 
 .welcome-message p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     color: var(--text-light);
     margin-bottom: 8px;
@@ -195,7 +206,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #A2146A 0%, #8a1159 100%);
     color: white;
     display: flex;
     align-items: center;
@@ -207,13 +218,14 @@ body {
 }
 
 .message.user .message-avatar {
-    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    background: linear-gradient(135deg, #F9B03B 0%, #FCD79C 100%);
 }
 
 .message-content {
     background: white;
     padding: 14px 18px;
     border-radius: 16px;
+    font-size: 18px;
     line-height: 1.6;
     box-shadow: var(--shadow-sm);
     color: var(--text-dark);
@@ -222,8 +234,8 @@ body {
 }
 
 .message.user .message-content {
-    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
-    color: white;
+    background: linear-gradient(135deg, #F9B03B 0%, #FCD79C 100%);
+    color: var(--text-dark);
 }
 
 .typing-indicator {
@@ -294,7 +306,7 @@ body {
 
 .progress-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(90deg, #A2146A 0%, #F9B03B 100%);
     width: 0%;
     transition: width 0.5s ease;
     border-radius: 3px;
@@ -307,10 +319,10 @@ body {
 
 .chat-input {
     flex: 1;
-    padding: 14px 18px;
+    padding: 12px 18px;
     border: 2px solid var(--border-color);
-    border-radius: 12px;
-    font-size: 15px;
+    border-radius: 5px;
+    font-size: 16px;
     outline: none;
     transition: all 0.2s;
     font-family: inherit;
@@ -318,7 +330,7 @@ body {
 
 .chat-input:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    box-shadow: 0 0 0 3px rgba(162, 20, 106, 0.1);
 }
 
 .chat-input:disabled {
@@ -327,11 +339,11 @@ body {
 }
 
 .send-button {
-    padding: 14px 28px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    padding: 12px 24px;
+    background: var(--secondary-color);
+    color: var(--text-dark);
     border: none;
-    border-radius: 12px;
+    border-radius: 5px;
     font-weight: 600;
     font-size: 15px;
     cursor: pointer;
@@ -343,6 +355,7 @@ body {
 }
 
 .send-button:hover:not(:disabled) {
+    background: var(--accent-light-gold);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -368,11 +381,11 @@ body {
 }
 
 .start-chat-button {
-    padding: 16px 48px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    padding: 12px 24px;
+    background: var(--secondary-color);
+    color: var(--text-dark);
     border: none;
-    border-radius: 12px;
+    border-radius: 5px;
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;
@@ -381,6 +394,7 @@ body {
 }
 
 .start-chat-button:hover {
+    background: var(--accent-light-gold);
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
 }
@@ -398,9 +412,9 @@ body {
 
 .confirm-btn {
     flex: 1;
-    padding: 14px 24px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 12px;
+    border-radius: 5px;
     font-weight: 600;
     font-size: 15px;
     cursor: pointer;
@@ -409,8 +423,8 @@ body {
 }
 
 .confirm-btn.yes {
-    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
-    color: white;
+    background: var(--secondary-color);
+    color: var(--text-dark);
 }
 
 .confirm-btn.no {
